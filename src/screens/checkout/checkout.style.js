@@ -40,5 +40,9 @@ export const styles = {
         fontWeight: "bold"
     },
 
+    containerBtn: {
+        marginTop: 10
+    }
+
 
     }

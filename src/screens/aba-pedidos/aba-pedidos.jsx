@@ -4,9 +4,14 @@ import { pedidos } from "../../constants/dados.js";
 import { styles } from "./aba-pedidos.style.js";
 import Pedido from "../../components/pedido/pedido.jsx"
 
-const vazio = [];
+// const vazio = [];
 
-function AbaPedidos() {
+function AbaPedidos(props) {
+
+   function DetalhePedido() {
+      props.navigation.navigate("detalhe-pedido");
+    }
+
     return <View style={styles.container}>
        <FlatList data={pedidos}
        keyExtractor={(ped) => ped.id}
@@ -17,6 +22,7 @@ function AbaPedidos() {
         valor={item.vl_total}
         dt_pedido={item.dt_pedido}
         status={item.status}
+        onClickPedido={DetalhePedido}
         />
       
        }}
